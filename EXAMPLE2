@@ -1,0 +1,9 @@
+EXAMPLE2=
+
+x=int(input("Bir sayi giriniz?"))
+number=x
+while number<=10:
+    print(number)
+    number+=1
+else:
+    print(str(x)+ " den 10 a kadar sayilar bitti.")
