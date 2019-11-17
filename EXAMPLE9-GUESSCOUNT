@@ -1,0 +1,13 @@
+EXAMPLE9-GUESSCOUNT=
+
+# Guess number while Guesscount=5
+number=5
+guess=int(input("tahmin:"))
+guessCount=1
+while guessCount<5 and guess !=number:
+    guess=int(input("tahmin:"))
+    guessCount=guessCount+1
+if guess==number:
+    print("Tebr")
+else:
+    print("Lost")
