@@ -1,0 +1,9 @@
+EXAMPLE4=
+
+sayi = 1
+while sayi < 10:
+    print(sayi)
+    print("10 dan kucuk")
+    sayi = sayi + 1
+print(sayi)
+print("10 veya 10 dan buyuk")
