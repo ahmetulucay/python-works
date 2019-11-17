@@ -1,0 +1,10 @@
+EXAMPLE6=
+
+# From current to end, write all numbers
+
+current=1
+end=int(input("bitis sayisi"))
+while current<=end:
+      print(current)
+      current+=1
+print("end")
