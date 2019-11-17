@@ -1,0 +1,10 @@
+EXAMPLE7=
+
+start=int(input("baslangic sayisi: "))
+end=int(input("bitis sayisi: "))
+current=start+1
+total=0
+while current > start and current<end:
+    total=total+current
+    current=current+1
+print(total)
