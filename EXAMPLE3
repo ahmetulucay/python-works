@@ -1,0 +1,11 @@
+EXAMPLE3=
+
+B = 5
+C = 6
+if B > C:
+    if B == int:
+        print("B Cden buyuk ve int tir")
+    else:
+        print("C Bden buyuk ve int tir")
+else:
+    print("C Bden buyuktur")
