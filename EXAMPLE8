@@ -1,0 +1,16 @@
+EXAMPLE8=
+
+# Guessing Prime Number
+
+number=int(input("sayi: "))
+
+if number >1:
+    current=2
+    isPrime = True
+    while current<number:
+         if number % current ==0:
+             isPrime=False
+         current=current+1
+    print(isPrime)
+else:
+    print("bigger")
