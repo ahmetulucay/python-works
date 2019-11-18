@@ -1,0 +1,14 @@
+# EXAMPLE10-Printing due to given number=
+
+
+
+x = int(input('Given Number: '))
+
+if (x>10 or x<20):
+   print(“Orange”)
+elif (x>20 and x%2==0):
+   print(“Mandarin”)
+elif (x>20 and x%2!=0):
+   print(“Apple”)
+else:
+   print(“Tomato”)
