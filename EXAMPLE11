@@ -1,0 +1,17 @@
+#Yüzme biliyorsa ve hava sıcaksa ve açık havuz varsa ekrana "açık havuzda yüzebilirsin" yazdırın
+#Yüzme biliyorsa ve hava sıcak değilse ve kapalı havuz varsa ekrana "kapalı havuzda yüzebilirsin" yazdırın
+#İlk iki duruma uymayan bir durumda ekrana "yüzemezsin" yazdırın
+
+
+
+yuzme_biliyor = input('yüzme biliyor musun [e/h]')
+hava_sicak = input('yüzme biliyor musun [e/h]')
+kapali_havuz_var = input('yüzme biliyor musun [e/h]')
+acik_havuz_pahali = input('yüzme biliyor musun [e/h]')
+
+if (yuzme_biliyor=='e' and hava_sicak=='e') and (kapali_havuz_var=='e' or acik_havuz_pahali=='e'):
+         print("açık havuzda yüzebilirsin")
+elif (yuzme_biliyor=='e' and hava_sicak !='e') and (kapali_havuz_var=='e' and acik_havuz_pahali=='h'):
+         print("kapalı havuzda yüzebilirsin")  
+else:
+    print("yüzemezsin")
