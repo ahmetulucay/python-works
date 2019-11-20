@@ -1,0 +1,46 @@
+yatirilanPara = int(input('Yatırılan para?'))
+ay = 1
+kazanilanPara = 0
+while ay <= 12:
+    if (ay == 1):
+        if yatirilanPara < 1000:
+            kazanilanPara = kazanilanPara + yatirilanPara * 0.2;
+        else:
+            kazanilanPara = kazanilanPara + yatirilanPara * 0.3;
+    elif (ay == 2):
+        if (yatirilanPara < 1500):
+            kazanilanPara = kazanilanPara + yatirilanPara * 0.1;
+        elif (yatirilanPara > 2000):
+            kazanilanPara = kazanilanPara + yatirilanPara * 0.12;
+        else:
+            kazanilanPara = kazanilanPara + yatirilanPara * 0.5;
+    elif (ay == 3):
+        if (yatirilanPara < 1500):
+            kazanilanPara = kazanilanPara + yatirilanPara * 0.1;
+        elif (yatirilanPara > 2000):
+            kazanilanPara = kazanilanPara + yatirilanPara * 0.12;
+        else:
+            kazanilanPara = kazanilanPara + yatirilanPara * 0.4;
+    else:
+        kazanilanPara = kazanilanPara + yatirilanPara * 0.3;
+    ay = ay + 1;
+print(kazanilanPara)
+
+
+/** Bir yatırım kuruluşu 12 aylık dönemlerde müşterilerin yatırdıkları paraya göre kar payı veren bir sisteme sahiptir. Bu sistem müşterinin yatırdığı parayı 12 ay boyunca değerlendirip, 12 ay sonunda müşteriye yatırdığı paraya ek olarak kazandığı kar payını da vermektedir.
+Sistemde kar oranları şu şekilde belirlenmektedir;
+
+    1. ay için müşterinin yatırdığı para 1000TL'den az ise %20 kar, üstünde ise %30 kar verilir.
+    2. ay için;
+        yatırılan para 1500TL'den az ise %10 kar verilir.
+        yatırılan para 2000TL'den çok ise %12 kar verilir.
+        diğer şartlarda %5 kar verilir
+    
+    3. ay için;
+        yatırılan para 1500TL'den az ise %10 kar verilir.
+        yatırılan para 2000TL'den çok ise %12 kar verilir.
+        diğer şartlarda %4 kar verilir
+        
+    Sonraki aylar için;
+        Her durumda %3 kar verilmektedir.
+Sizden müşterilere yatırdıkları paraya göre elde edecekleri kar oranlarını hesaplayacak programı yazmanız istenmektedir. */
