@@ -1,0 +1,17 @@
+raf = ['beyaz','yesil','beyaz','yesil','beyaz','yesil']
+i = 0
+while (i < len(raf) - 1):
+   if(raf[i] == 'b' and raf[i+1] == 'y'):
+       tuttum = raf[i]
+       raf[i] = raf[i+1]
+       raf[i+1] = tuttum
+       i = 0
+   else:
+      i = i + 1
+  
+i = 0  
+while (i < len(raf)):
+   print (raf[i])
+   i = i + 1
+   
+   /** KUTULARI SIRALAMA */
