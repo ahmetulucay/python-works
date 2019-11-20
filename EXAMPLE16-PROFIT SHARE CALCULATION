@@ -1,0 +1,84 @@
+yatirilanPara = int(input('Yatirilan para?'))
+cinsiyet = input('Cinsiyet?(erkek/kadin)')
+calismadurumu = input('Calisma durumu?(calisiyor/emekli)')
+kazanilanPara = 0
+ay = 1
+while (ay < 3):
+    ayrilmakIstiyorMu = input('Ayrilmak istiyor mu?(e/h)');
+    if (ayrilmakIstiyorMu == 'h'):
+        if (ay == 1):
+            if (yatirilanPara < 1000):
+                kazanilanPara = kazanilanPara + yatirilanPara * 0.2;
+            else:
+                kazanilanPara = kazanilanPara + yatirilanPara * 0.3;
+        elif (ay == 2):
+            if ((cinsiyet == 'erkek' and yatirilanPara < 1500) or calismadurumu == 'emekli'):
+                kazanilanPara = kazanilanPara + yatirilanPara * 0.1;
+            elif (cinsiyet == 'kadin' and yatirilanPara < 1500 and calismadurumu == 'emekli'):
+                kazanilanPara = kazanilanPara + yatirilanPara * 0.13;
+            else:
+                kazanilanPara = kazanilanPara + yatirilanPara * 0.5;
+        elif (ay == 3):
+            if (cinsiyet == 'erkek' and yatirilanPara < 2000 and calismadurumu == 'emekli'):
+                kazanilanPara = kazanilanPara + yatirilanPara * 0.1;
+            elif (cinsiyet == 'kadin' and calismadurumu == 'calisiyor' and (
+                    not (yatirilanPara < 2000) and not (yatirilanPara > 3000))):
+                kazanilanPara = kazanilanPara + yatirilanPara * 0.11;
+            elif (cinsiyet == 'erkek' and calismadurumu == 'calisiyor' and (
+                    yatirilanPara < 2000 or yatirilanPara > 3000)):
+                kazanilanPara = kazanilanPara + yatirilanPara * 0.12;
+            else:
+                kazanilanPara = kazanilanPara + yatirilanPara * 0.6;
+    else:
+        if (ay == 1):
+            if (calismadurumu == 'emekli'):
+                kazanilanPara = kazanilanPara - yatirilanPara * 0.02;
+            elif (calismadurumu == 'emekli' and cinsiyet == 'kadin'):
+                kazanilanPara = kazanilanPara - yatirilanPara * 0.03;
+            elif (calismadurumu == 'emekli' and cinsiyet == 'erkek'):
+                kazanilanPara = kazanilanPara - yatirilanPara * 0.04;
+        elif (ay == 2):
+            if (calismadurumu != 'emekli'):
+                kazanilanPara = kazanilanPara - yatirilanPara * 0.05;
+            else:
+                kazanilanPara = kazanilanPara - yatirilanPara * 0.03;
+        elif (ay == 3):
+            if (cinsiyet != 'kadin' or calismadurumu != 'emekli'):
+                kazanilanPara = kazanilanPara - yatirilanPara * 0.06;
+            elif (cinsiyet == 'kadin' and calismadurumu == 'emekli'):
+                kazanilanPara = kazanilanPara - yatirilanPara * 0.04;
+    ay = ay + 1;
+
+print(kazanilanPara)
+
+
+/** Bir yatırım kuruluşu üç aylık dönemlerde müşterilerin yatırdıkları paraya göre kar payı veren bir sisteme sahiptir. Bu sistem müşterinin yatırdığı parayı 3 ay boyunca değerlendirip 3 ay sonunda müşteriye yatırdığı paraya ek olarak kazandığı kar payını da vermektedir. Müşterinin sistemden 3 ay dolmadan ayrılması durumunda ayrıldığı aya göre ve müşterinin bilgilerine göre yatırılan para üzerinden ceza verilmektedir. Sistemde müşterilerin yatırdıkları paraya, cinsiyetlerine ve çalışma durumlarına göre kar payı veya caza hesaplamaları yapılmaktadır.
+
+Sistemde kar oranları şu şekilde belirlenmektedir;
+    1. ay için;
+       - Müşterinin yatırdığı para 1000TL'den az ise %20 kar, üstünde ise %30 kar verilir.
+
+    2. ay için;
+        - Erkek müşteriler için yatırılan para 1500TL'den az ise veya müşteri emekli ise %10 kar verilir.
+        - Kadın müşteriler için yatırılan para 1500TL'den az ise ve emekli ise %13 kar verilir.
+        - Diğer şartlarda %5 kar verilir
+        
+    3. ay için;
+        - Emekli erkek müşteriler için yatırılan para 2000TL'den az %10 kar verilir.
+        - Çalışan kadın müşteriler için yatırılan para 2000TL'den az değilse ve 3000TL'den çok değilse %11 kar verilir.
+        - Çalışan erkek müşteriler için yatırılan para 2000TL'den az ise  veya 3000TL'den çoksa %12 kar verilir.
+        - Diğer şartlarda % 6 kar verilir
+
+Sistemde ceza oranları şu şekilde belirlenmektedir;
+    1. ay için;
+        - Müşteri emekli ise %2 ceza verilir.
+        - Müşteri çalışıyor ve kadın ise %3 ceza verilir.
+        - Müşteri çalışıyor ve erkek ise %4 ceza verilir.
+        
+    2. ay için;
+        - Müşteri emekli değil ise % 5
+        - Müşteri emekli ise % 3
+        
+    3. ay için;
+        - Müşteri kadın değil ise veya emekli değil ise % 6
+        - Müşteri kadın ise ve emekli ise % 4                   */
