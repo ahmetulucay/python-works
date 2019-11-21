@@ -3,16 +3,18 @@
 a= int(input("First Number: "))
 b= int(input("Second Number: "))
 c=a+b            #Third Number#
+d=int(input("How many terms do you want to print?: "))
 print(a, end=" ")
 print(b, end=" ")
 print(c, end=" ")
-d=4              #Loop Starting Number#
-while d<=15 :
+e=4              #Loop First Number#
+while e<=d :
    c=c+b
    b=c-b
    print(c, end=" ")
-   d=d+1         #Loop Counting#
- 
+   e=e+1         #Loop Counting#
+
+#Sample output (for 3, 4 and for 15 term) =  3 4 7 11 18 29 47 76 123 199 322 521 843 1364 2207 #
 
 
 
@@ -24,7 +26,6 @@ Dizinin her teriminin kendinden onceki son 2 terimin toplami seklinde olusmasi g
 Dizimizin ilk 2 terimi bize verilmisti zaten 3 ve 4.
 
 3. terimimiz  yukaridaki sarta gore 1. ve 2. terimin toplami olmasi gerekiyor yani 3 + 4 = 7
-3 4 7
 
 Ornek program outputu (3, 4)
 Serinin ilk 15 terimi =  3 4 7 11 18 29 47 76 123 199 322 521 843 1364 2207
