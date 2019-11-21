@@ -1,0 +1,18 @@
+# Print numbers due to code until reach "1" #
+
+n = int(input("Enter a number: "))
+print(n)
+next_number=0
+
+while not (n == 1) :
+
+   if n%2 == 0 :
+        next_number=n/2
+        print(next_number)
+   if n % 2 != 0:
+        next_number=3*n+1
+        print(next_number)
+
+   n=next_number
+
+# Code and program ends here. #
