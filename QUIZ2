@@ -1,0 +1,14 @@
+number = int(input("number: "))
+var = 0
+while var < number:
+    var = var + 1
+    print(str(var) *var)
+
+
+#
+1
+22
+333
+4444
+55555
+......
