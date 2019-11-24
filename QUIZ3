@@ -1,0 +1,21 @@
+a=int(input("a sayisini girin: "))
+b=int(input("b sayisini girin: "))
+
+
+while a<b:
+   
+    karekok=a ** 0.5
+    if karekok %2==0 :
+        print(a)
+    a=a+1
+
+#
+a=1
+b=100
+
+1
+4
+16
+36
+64
+100
