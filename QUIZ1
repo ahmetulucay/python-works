@@ -1,0 +1,12 @@
+n=int(input("Sayi girin: "))
+nn=str(n)*2
+nnn=str(n)*3
+
+toplam=(n+int(nn)+int(nnn))
+print(toplam)
+
+#
+1
+22
+333
+....
