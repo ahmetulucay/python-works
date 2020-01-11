@@ -1,0 +1,54 @@
+def game_xmas(gizli_kelime):
+    n = 8  # n=Tahmin_Hakki
+    list_tahmin_edilen = []
+    while n <= 8 and n != 0:
+        harf = input( "Lutfen bir harf tahmin edin: " )
+
+        if harf in gizli_kelime:
+            if harf in list_tahmin_edilen:
+                print( "Oops! Bu harfi zaten soylemistiniz:" + str( bosluk_doldurma( harf ) ) )  # bosluk_doldurma fonk.
+                print( "==============================" )
+                print( str( n ) + " tahmin hakkiniz kaldi" )
+                print( "Kalan Harfler: " + str( kalanlar ) )
+            elif harf in kalanlar:
+                print( "Iyi tahmin:" + str( bosluk_doldurma( harf ) ) )  # bosluk_doldurma fonk.
+                print( "==============================" )
+                if bos_list == ['k', 'o', 'd', 's', 't', 'a', 'r']:
+                    print( "Tebrikler!, kazandiniz" )
+                    n = 0
+                else:
+                    print( str( n ) + " tahmin hakkiniz kaldi" )
+                    kalanlar.remove( harf )
+                    print( "Kalan Harfler: " + str( kalanlar ) )
+
+        else:
+            n = n - 1
+            print( "Oops! Yanlis tahmin:" + str( bos_list ) )  # bosluk_doldurma fonk.
+            print( "==============================" )
+            if n == 0:
+                print( "Ne yazik ki tum haklariniz tukendi, gizli kelime  kodstar  olacakti" )
+            else:
+                print( str( n ) + " tahmin hakkiniz kaldi" )
+                print( "Kalan Harfler: " + str( kalanlar ) )
+
+        list_tahmin_edilen.append( harf )
+
+
+def bosluk_doldurma(harf):
+    h = gizli_kelime1.index( harf )
+    bos_list.pop( h )
+    bos_list.insert( h, harf )
+    return bos_list
+
+
+print( "Xmas oyununa Hosgeldiniz" )
+print( "Bulmaniz gereken kelime 7 harf iceriyor." )
+print( "==============================" )
+print( "8 tahmin hakkiniz kaldi" )
+print(
+    "Kalan Harfler: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']" )
+kalanlar = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+            'v', 'w', 'x', 'y', 'z']
+bos_list = ['-', '-', '-', '-', '-', '-', '-']
+gizli_kelime1 = "kodstar"
+game_xmas( gizli_kelime1 )
