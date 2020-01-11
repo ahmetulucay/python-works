@@ -1,0 +1,108 @@
+print( "HESAPLI BANKA HOSGELDINIZ" )
+print( "-------------------------" )
+print( "Hesap Acmak Icin      : a" )
+print( "Para Yatirmak Icin    : y" )
+print( "Para Cekmek Icin      : w" )
+print( "Bakiye Kontrolu Icin  : b" )
+print( "Hesabi Kapatmak Icin  : c" )
+print( "Cikis Icin            : q" )
+print( "-------------------------" )
+
+
+def giris_islemi():
+    giris = input( "Lutfen bir islem giriniz." )
+
+    if   giris == "a":
+        hesap_ac()
+    elif giris == "y":
+        para_yatir()
+    elif giris == "w":
+        para_cek()
+    elif giris == "b":
+        bakiye_kontrolet()
+    elif giris == "c":
+        hesabi_kapat()
+    elif giris == "q":
+        cikis_yap()
+    else:
+        print( "Hatali islem girisi.")  
+        giris_islemi()
+
+
+def hesap_ac():
+    if hesaplar == []:
+        hesap_no = 1
+        yeni_hesap = [hesap_no, 0]
+        hesaplar.append( yeni_hesap )
+        print( "Hesaplar = "+ str(hesaplar))
+        giris_islemi()
+    else:
+        hesap_sayisi = len( hesaplar )
+        hesap_sayisi += 1
+        yeni_hesap = [hesap_sayisi, 0]
+        hesaplar.append( yeni_hesap )
+        print( "Hesaplar = "+ str(hesaplar))
+        giris_islemi()
+
+
+def para_yatir():
+    hesap_no = int( input( "Lutfen Hesap Numaranizi giriniz: " ) )
+    if len( hesaplar ) < hesap_no:
+        print( "Hesap numaraniz bulunamadi." )
+    elif hesaplar[hesap_no-1]==[]:
+        print( "Hesabiniz kapali")
+    else:
+        yatan_para = int( input( "Ne kadar para yatirilacak: " ) )
+        hesaplar[hesap_no - 1][1] = hesaplar[hesap_no - 1][1] + yatan_para
+        print( "Hesaplar = "+ str(hesaplar))
+    giris_islemi()
+
+
+def para_cek():
+    hesap_no = int( input( "Lutfen Hesap Numaranizi giriniz: " ) )
+    if len( hesaplar ) < hesap_no:
+        print( "Hesap numaraniz bulunamadi." )
+    elif hesaplar[hesap_no-1]==[]:
+        print( "Hesabiniz kapali")
+    else:
+        cekilen_para = int( input( "Ne kadar para cekilecek: " ) )
+        if hesaplar[hesap_no - 1][1] < cekilen_para:
+            print( "Yetersiz bakiye.")
+            print( "Hesaplar = "+ str(hesaplar))
+        else:
+            hesaplar[hesap_no - 1][1] = hesaplar[hesap_no - 1][1] - cekilen_para
+            print( "Hesaplar = "+ str(hesaplar))
+    giris_islemi()
+
+
+def bakiye_kontrolet():
+    hesap_no = int( input( "Lutfen Hesap Numaranizi giriniz: " ) )
+    if len( hesaplar ) < hesap_no:
+        print( "Hesap numaraniz bulunamadi." )
+    elif hesaplar[hesap_no-1]==[]:
+        print( "Hesabiniz kapali")
+    else:
+        print( "Bakiyeniz: " + str( hesaplar[hesap_no - 1][1] ) )
+    giris_islemi()
+
+
+def hesabi_kapat():
+    hesap_no = int( input( "Lutfen Hesap Numaranizi giriniz: " ) )
+    if len( hesaplar ) < hesap_no:
+        print( "Hesap numaraniz bulunamadi." )
+    elif hesaplar[hesap_no-1]==[]:
+        print( "Hesabiniz kapali")
+    else:
+        print( "Hesabiniz kapatildi: ")
+        print(hesaplar.pop( hesap_no - 1 ))
+        hesaplar.insert( hesap_no -1, [])
+    giris_islemi()
+
+
+def cikis_yap():
+    print( "Hesap isleminiz sona erdi. Iyi gunler." )
+    exit()
+
+
+hesaplar = []
+giris_islemi()
