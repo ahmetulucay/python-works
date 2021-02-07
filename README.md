@@ -9,7 +9,6 @@ Game Xmas
 Quiz (1-3)
 
 #
-*******************
 
 Feel free for any suggestions, recommendations or improvements.
 
