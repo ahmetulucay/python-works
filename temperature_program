@@ -1,0 +1,55 @@
+a program that asks the user for the temperature and whether it is raining:
+
+If the temperature is above 30°C:
+If it’s raining, print “It’s hot and rainy. Stay indoors.”
+If it’s not raining, print “It’s hot outside. Wear light clothes.”
+If the temperature is between 20°C and 30°C:
+If it’s raining, print “It’s warm and rainy. Carry an umbrella.”
+If it’s not raining, print “It’s a pleasant day. Enjoy the weather.”
+If the temperature is below 20°C:
+If it’s raining, print “It’s cold and rainy. Wear a raincoat.”
+If it’s not raining, print “It’s cold outside. Dress warmly.”
+
+
+def temperature():
+    while True:
+       input_temp = input("Enter the temperature (in °C)")
+       input_rain = input("Is it raining? (yes/no)")
+    
+       if not input_temp.isdigit():
+            print("You put invalid value. Please enter a new temperature")
+            continue
+       elif input_rain.isdigit():
+            print("You put invalid value. Please enter a string value 'raining' ")
+            continue
+       else:
+           input_temperature = int(input_temp)
+           input_raining = input_rain.lower()
+           if input_temperature > 30:
+               if input_raining == "yes":
+                   print ("It’s hot and rainy. Stay indoors.")
+                   pass
+               else:
+                   print ("It’s hot outside. Wear light clothes.")
+                   pass
+    
+           if input_temperature >= 20 and input_temperature <=30:
+               if input_raining == "yes":
+                   print ("It’s warm and rainy. Carry an umbrella.")
+                   pass
+               else:
+                   print ("It’s a pleasant day. Enjoy the weather.")
+                   pass
+    
+           if input_temperature < 20:
+               if input_raining == "yes":
+                   print ("It’s cold and rainy. Wear a raincoat.")
+                   pass
+               else:
+                   print ("It’s cold outside. Dress warmly.")
+                   pass    
+
+       break
+
+print("Welcome to Temperature Program v.1")
+temperature()
