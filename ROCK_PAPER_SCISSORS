@@ -1,0 +1,66 @@
+--------------------------------
+# Rock, Paper, Scissors < GAME >
+
+# rock breaks scissors
+# paper covers rock
+# scissor cuts paper
+# anything the same for both players mean a tie.
+
+--------------------------------
+import random
+
+def rock_paper_scissors():
+
+    while True:
+        # declare a list
+        choices_list = ["rock", "paper", "scissors"]
+        
+        # get user choice
+        user_choice = input("Enter your choice (rock, paper, scissors): ").lower()
+        
+        # get computer choice
+        computer_choice = random.choice(choices_list)
+        
+        # show the choices
+        print(f"The user choice is {user_choice}. ")
+        print(f"The computer choice is {computer_choice}. ")
+        
+        # determine the winner
+        if (user_choice == computer_choice):
+            print("There is a tie")
+            
+        elif user_choice == "rock":
+            #check computer for paper and scissors
+            #rock is not necessaryy because of the tie
+            if computer_choice == "paper":
+                print("Computer wins: Paper covers rock")
+            else:
+                print("You win: Rock smashes scissors")
+    
+        elif user_choice == "paper":
+            #check computer for rock and scissors
+            if computer_choice == "rock":
+                print("You win: Paper covers rock")
+            else:
+                print("Computer wins: Scissors cut paper")
+    
+        elif user_choice == "scissors":
+            #check computer for rock and paper
+            if computer_choice == "rock":
+                print("Computer wins: Rock smashes scissors")
+            else:
+                print("You win: Scissors cut paper")
+        else:
+            print("invalid user choice")
+    
+        Yes_No = input("You wanna play again? Y/N").upper()
+        if Yes_No == "N" :
+            break
+        elif Yes_No == "Y" :
+            print("Thanks for playing again.")
+            rock_paper_scissors()
+        else:
+            print("Invalid choice. We insist you play again!")
+
+
+rock_paper_scissors()
