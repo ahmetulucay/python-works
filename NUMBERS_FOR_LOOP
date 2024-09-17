@@ -1,0 +1,47 @@
+#Define a list (numbers for loop)
+
+numbers = []
+
+#add up all the number
+#print(sum(numbers))
+
+total_sum = 0
+#find the even numbers
+even_numbers = []
+
+#find the odd numbers
+odd_numbers = []
+
+#get input
+user_input = input("Enter a list of numbers seperated by comas:")
+
+
+#1, 2, 3, 4, 5, 6
+#take away unwanted spaces
+#split up the numbers into a list
+
+string_numbers = user_input.split(",")
+#print(type(string_numbers))
+print(string_numbers)
+#take away unwanted spaces
+for stringitem in string_numbers:
+    number = int(stringitem.strip())
+    numbers.append(number)
+
+
+#for loop
+for number in numbers:
+    #add every item up
+    total_sum += number
+    #analyse even/odd and add to a list
+    if number %2 == 0:
+        even_numbers.append(number)
+    else:
+        odd_numbers.append(number)
+
+#outside for loop
+print(f"The total sum of the list is: {total_sum}")
+print(f"Even numbers: {sorted(even_numbers, reverse=True)}")
+print(f"Odd numbers: {odd_numbers}")
+
+#print(f"Even numbers: {even_numbers}")
