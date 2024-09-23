@@ -1,0 +1,17 @@
+# Function factor(x,y) that will 
+    return True if x is factor of y (x is a divisor of y) 
+    return False if it is not...
+
+
+def factor (x, y):
+    if y == 0:
+        return False
+    else: 
+        if x % y == 0:
+            return True
+        else: return False
+
+x = int(input("Give me a number")) 
+y = int(input("Give me a factor number bigger than '0'")) 
+
+factor(x, y)
