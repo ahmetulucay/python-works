@@ -1,0 +1,18 @@
+def is_prime():
+    i = int (input("Give me a number, whether if it is Prime!: "))
+    if i<=1:
+        return False
+    elif i == 2:
+        return True
+    else:
+        if i % 2 == 0:
+            return False
+        else:
+            a = 2
+            while a < i:
+                if (i % a == 0):
+                    return False
+                a += 1
+            return True
+            
+is_prime()
