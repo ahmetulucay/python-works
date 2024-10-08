@@ -1,0 +1,28 @@
+# EVEN AND ODD NUMBERS 
+# It is a program which takes 10 numbers from the user.
+# It stores the numbers in a list.
+# It creates 2 lists one for even numbers and one for odd numbers.
+# Then it sorts the numbers into the appropriate lists.
+# Finally, it prints both the even and odd number lists.
+
+
+numbers = []
+evens = []
+odds = []
+
+counter = 1
+
+while counter <=10:
+    number = float(input(f"Enter number {counter}: "))
+    numbers.append(number)
+    if number % 2 == 0:
+        evens.append(number)
+    else:
+        odds.append(number)
+    counter += 1
+
+print("Welcome to the 'EVEN and ODD NUMBERS'")
+print("-------------------------------------")
+print("Even numbers' list: ", evens)
+print("-------------------------------------")
+print("Odd numbers' list: ", odds)
