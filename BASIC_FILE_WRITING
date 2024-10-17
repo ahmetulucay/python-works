@@ -1,0 +1,16 @@
+# Basic file writing=
+
+def basic_file_writing():
+    try:
+        fname = 'output.txt'
+        line_count = 1
+        with open(fname, 'w') as write_output:
+            while line_count<=3:
+                input_lines = input(f"Enter line {line_count}: ")
+                write_output.write(f"{input_lines}\n")
+                line_count += 1
+            print(f"Three lines written to {fname}")
+    except:
+        print("Text file not found!")
+
+basic_file_writing()
