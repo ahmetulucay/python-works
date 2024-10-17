@@ -1,4 +1,8 @@
-# Basic file writing=
+# Basic file writing
+# Program asks the user to input 3 lines of text. 
+# And then it saves them to a file.
+# The filename is output.txt.
+
 
 def basic_file_writing():
     try:
