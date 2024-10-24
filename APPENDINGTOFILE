@@ -1,0 +1,19 @@
+# Allowing user adding 5 more lines to text1
+def appendfile():
+  try:
+    filename = 'text1.txt'
+    linecount = 1
+    with open(filename, 'a') as writeoutput:
+        while linecount<=5:
+            inputlines = input(f"Enter line {linecount}: ")
+            writeoutput.write(f"{inputlines}\n")
+            linecount += 1
+        print(f"Five lines added to {filename}")
+  except:
+    print("\nSomething wrong?")
+  else:
+    print("\nThis text1 file successfully opened and updated with new added data.")
+
+appendfile()
+
+#
