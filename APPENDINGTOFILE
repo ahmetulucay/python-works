@@ -1,4 +1,7 @@
-# Allowing user adding 5 more lines to text1
+####
+Allowing user adding 5 more lines to text1.txt
+####
+
 def appendfile():
   try:
     filename = 'text1.txt'
@@ -16,4 +19,15 @@ def appendfile():
 
 appendfile()
 
-#
+####
+OUTPUT=
+
+Enter line 1:  new 1
+Enter line 2:  new 2
+Enter line 3:  new 3
+Enter line 4:  new 4
+Enter line 5:  new 5
+Five lines added to text1.txt
+This text1 file successfully opened and updated with new added data.
+
+####
