@@ -1,0 +1,54 @@
+# Function to create and write text to a file
+def create_file(filename, content):
+    with open(filename, 'w') as file:
+        file.write(content)
+    print(f"File '{filename}' created and initial content added.\n")
+
+# Function to read the content of the file and display it
+def read_file(filename):
+    try:
+        with open(filename, 'r') as file:
+            content = file.read()
+        print(f"Content of '{filename}':\n{content}")
+    except FileNotFoundError:
+        print(f"File '{filename}' not found.\n")
+
+# Function to append text to the file
+def append_to_file(filename, new_content):
+    try:
+        with open(filename, 'a') as file:
+            file.write(new_content)
+        print(f"New content appended to '{filename}'.\n")
+    except FileNotFoundError:
+        print(f"File '{filename}' not found.\n")
+
+
+# Example usage:
+filename = "example_text.txt"
+initial_content = """\
+The Road Not Taken by Robert Frost
+
+Two roads diverged in a yellow wood,
+And sorry I could not travel both
+And be one traveler, long I stood
+And looked down one as far as I could
+To where it bent in the undergrowth.
+"""
+
+new_content = """
+
+I shall be telling this with a sigh
+Somewhere ages and ages hence:
+Two roads diverged in a wood, and I—
+I took the one less traveled by,
+And that has made all the difference.
+"""
+
+# Creating and writing initial content to the file
+create_file(filename, initial_content)
+
+# Reading and displaying the content of the file
+read_file(filename)
+
+# Appending new content to the file
+append_to_file(filename, new_content)
