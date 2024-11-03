@@ -1,0 +1,24 @@
+#1. Read the file
+#2. Filter Messages
+
+filename = './messagefile/Messages.txt'
+def readfile():
+    with open(filename, 'r') as f:
+        content = f.read()
+        print(content)
+
+messages = []
+def filtermessages():
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            label, message = line.split('\t')
+            if label.strip().lower() == 'mms':
+                messages.append(message.strip())
+
+        print(messages)
+
+readfile()
+print("-------------------------------")
+filtermessages()
+print("-------------------------------")
