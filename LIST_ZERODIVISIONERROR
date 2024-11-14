@@ -1,0 +1,18 @@
+#List/Zero Division Error
+
+#provided list for when you call the function
+test_list = [6, 0, 8, 9] #provided list for when you call the function
+
+def divisionTest(test_list):
+    used_numbers = []
+    result = 100
+    try:
+        for index, number in enumerate(test_list):
+            result = 100/number
+            used_numbers.append(number)
+        return int(result)
+    except ZeroDivisionError:
+        print(f"Error: Division by zero encountered at index {index}. Numbers used in the calculation so far: {used_numbers}")
+        return ''
+        
+divisionTest(test_list)
