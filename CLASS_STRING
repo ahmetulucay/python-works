@@ -1,0 +1,23 @@
+class String:
+    def __init__(self, string):
+        self.string = string
+        #print("Step1")  -> Initialize the class, and calls test_function()
+
+    def getString(self): 
+        self.string = input("Enter a string: ")
+        #print("Step4")  -> Goes to test_function(), and calls printString()
+
+    def printString(self):
+        print(self.string.upper())  # -> prints the input string
+        #print("Step5")  -> Goes back to test_function()
+
+def test_function():
+    #print("Step3")  -> Goes to getString()
+    string.getString()
+    string.printString()   
+    #print("Step6")  -> Exits from test_function(), and reaches the end of the code
+
+string = String("")
+#print("Step2")  -> Goes to test_function()
+test_function()
+#print("Step7")  -> Exits from code...
