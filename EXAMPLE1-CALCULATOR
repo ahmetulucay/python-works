@@ -1,16 +1,21 @@
-sonuc=0
-sayi=0
-islem = input('İşlemi gir [+, -, *, /, x]? ')
+# Calculator program
 
-while islem != 'x' :
-    sayi=int(input('Sayı gir? '))
-    if islem == '+':
-        sonuc = sonuc + sayi
-    if islem == '-':
-        sonuc = sonuc - sayi
-    if islem == '*':
-        sonuc = sonuc * sayi
-    if islem == '/':
-        sonuc = sonuc / sayi
-    print(sonuc)
+def calculator():
+    sonuc = 0
+    sayi = 0
     islem = input('İşlemi gir [+, -, *, /, x]? ')
+
+    while islem != 'x' :
+        sayi=int(input('Sayı gir? '))
+        if islem == '+':
+            sonuc = sonuc + sayi
+        if islem == '-':
+            sonuc = sonuc - sayi
+        if islem == '*':
+            sonuc = sonuc * sayi
+        if islem == '/':
+            sonuc = sonuc / sayi
+        print(sonuc)
+        islem = input('İşlemi gir [+, -, *, /, x]? ')
+
+calculator()
