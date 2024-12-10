@@ -8,13 +8,13 @@ def load_students_info(file_name):
             reader = csv.DictReader(file)
             for row in reader:
                 students.append(
-                    {
-                        'name' : row['name'],
-                        'surname' : row['surname'],
-                        'subject' : row['subject'],
-                        'mark' :float(row['mark'])
-                    }
-                )
+                {
+                     'name' : row['name'],
+                     'surname' : row['surname'],
+                     'subject' : row['subject'],
+                     'mark' :float(row['mark'])
+                })
+
     except FileNotFoundError:
         print(f'Error: {file_name} not found')
     
@@ -22,3 +22,5 @@ def load_students_info(file_name):
 
 filename = 'studentsinfo.csv'
 load_students_info(filename)
+
+# End of code
