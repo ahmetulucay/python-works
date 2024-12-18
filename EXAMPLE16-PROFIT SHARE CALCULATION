@@ -1,3 +1,5 @@
+//Program written in Turkish
+
 yatirilanPara = int(input('Yatirilan para?'))
 cinsiyet = input('Cinsiyet?(erkek/kadin)')
 calismadurumu = input('Calisma durumu?(calisiyor/emekli)')
