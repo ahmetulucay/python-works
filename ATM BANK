@@ -28,7 +28,6 @@ def giris_islemi():
         print( "Hatali islem girisi.")  
         giris_islemi()
 
-
 def hesap_ac():
     if hesaplar == []:
         hesap_no = 1
@@ -44,7 +43,6 @@ def hesap_ac():
         print( "Hesaplar = "+ str(hesaplar))
         giris_islemi()
 
-
 def para_yatir():
     hesap_no = int( input( "Lutfen Hesap Numaranizi giriniz: " ) )
     if len( hesaplar ) < hesap_no:
@@ -56,7 +54,6 @@ def para_yatir():
         hesaplar[hesap_no - 1][1] = hesaplar[hesap_no - 1][1] + yatan_para
         print( "Hesaplar = "+ str(hesaplar))
     giris_islemi()
-
 
 def para_cek():
     hesap_no = int( input( "Lutfen Hesap Numaranizi giriniz: " ) )
@@ -74,7 +71,6 @@ def para_cek():
             print( "Hesaplar = "+ str(hesaplar))
     giris_islemi()
 
-
 def bakiye_kontrolet():
     hesap_no = int( input( "Lutfen Hesap Numaranizi giriniz: " ) )
     if len( hesaplar ) < hesap_no:
@@ -84,7 +80,6 @@ def bakiye_kontrolet():
     else:
         print( "Bakiyeniz: " + str( hesaplar[hesap_no - 1][1] ) )
     giris_islemi()
-
 
 def hesabi_kapat():
     hesap_no = int( input( "Lutfen Hesap Numaranizi giriniz: " ) )
@@ -97,7 +92,6 @@ def hesabi_kapat():
         print(hesaplar.pop( hesap_no - 1 ))
         hesaplar.insert( hesap_no -1, [])
     giris_islemi()
-
 
 def cikis_yap():
     print( "Hesap isleminiz sona erdi. Iyi gunler." )
