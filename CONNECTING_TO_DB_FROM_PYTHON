@@ -1,0 +1,21 @@
+# Connection between Python and Database
+
+import sqlite3
+
+# let's assume database name 'books.db'
+conn = sqlite3.connect('books.db')
+
+cursor = conn.cursor()
+print("The connection is now open and the cursor is ready...")
+
+# Create a string to store my SQL command
+SQL = '''SELECT *
+         FROM Authors;'''
+
+# Execute the select command that is currently in my SQL string
+# Print each row of data
+for row in cursor.execute(SQL):
+    print(row)
+
+# Close the Cursor
+cursor.close()
