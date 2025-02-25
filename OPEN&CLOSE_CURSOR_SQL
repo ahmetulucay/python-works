@@ -1,0 +1,10 @@
+#OPEN and CLOSE Cursors using python in SQL
+
+#Open the cursor
+cursor = conn.cursor()
+
+#Run the commands I want to run
+cursor.execute(SQL)
+
+#Close the cursor to release all resources for other programs, etc
+cursor.close()
