@@ -1,0 +1,10 @@
+import sqlite3
+
+def get_db_connection():
+    conn = sqlite3.connect("WorldAffairs2025.db")
+    conn.execute("PRAGMA foreign_keys = ON")
+    print("Connected. Foreign Keys are ON.")
+    return conn
+
+conn = get_db_connection()
+cursor = conn.cursor()
