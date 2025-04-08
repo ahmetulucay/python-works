@@ -1,0 +1,17 @@
+# Find the customer with the following parameters:
+- first name,
+- last name,
+- phone
+
+# --------------
+import sqlite3
+
+def find_customer(cursor, first_name, last_name, phone):
+    cursor.execute("""
+        SELECT CustomerID, FirstName, LastName, Phone
+        FROM CUSTOMER
+        WHERE FirstName = ? AND LastName = ? AND Phone = ?
+    """, (first_name, last_name, phone))
+    return cursor.fetchone()
+
+find_customer(cursor, first_name, last_name, phone)
