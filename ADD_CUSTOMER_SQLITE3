@@ -1,0 +1,15 @@
+# add_customer function in PYTHON using INSERT INTO in SQL
+
+# Adding the following customer information to the database:
+- First name, 
+- Last name, 
+- City, 
+- Country, 
+- Phone
+
+def add_customer(cursor, first_name, last_name, city, country, phone):
+    cursor.execute("""
+    INSERT INTO (FirstName, LastName, City, Country, Phone)
+    VALUES (?,?,?,?,?)
+    """, (first_name, last_name, city, country, phone))
+    return cursor.lastrowid
