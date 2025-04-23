@@ -1,0 +1,11 @@
+# CREATE INVOICE
+-customer id,
+-order number
+
+def create_invoice(cursor, customer_id, order_number):
+    today = date.today().isoformat()
+    cursor.execute("""
+        INSERT INTO INVOICE (OrderDate, OrderNumber, CustomerID, TotalAmount)
+        VALUES (?, ?, ?, ?)
+    """, (today, order_number, customer_id, 0.0))
+    return cursor.lastrowid
