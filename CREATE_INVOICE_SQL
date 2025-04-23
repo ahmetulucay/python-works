@@ -1,6 +1,8 @@
-# CREATE INVOICE
+# create_invoice function in PYTHON using INSERT INTO INVOICE in SQL
+
+# Creating an invoice following information:
 -customer id,
--order number
+-order number.
 
 def create_invoice(cursor, customer_id, order_number):
     today = date.today().isoformat()
@@ -9,3 +11,5 @@ def create_invoice(cursor, customer_id, order_number):
         VALUES (?, ?, ?, ?)
     """, (today, order_number, customer_id, 0.0))
     return cursor.lastrowid
+
+create_invoice(cursor, customer_id, order_number)
