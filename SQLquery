@@ -1,0 +1,9 @@
+# SQL Query (First Name, Last Name)
+
+SQLquery = """
+        SELECT cust.FirstName, cust.LastName, COUNT(ord.Id) 
+        FROM [Customer] AS cust
+        LEFT JOIN [Order] AS ord ON cust.Id = ord.CustomerId
+        WHERE cust.Id = ?
+        GROUP BY cust.FirstName, cust.LastName
+"""
