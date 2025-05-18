@@ -1,0 +1,27 @@
+# Function add_or_update_invoice_item()
+# Items: invoice_id, product_id, unit_price, quantity
+
+import sqlite3
+...
+
+def add_or_update_invoice_item(cursor, invoice_id, product_id, unit_price, quantity):
+    cursor.execute("""
+        SELECT InvoiceLineID, Quantity
+        FROM INVOICEITEM
+        WHERE InvoiceID = ? AND ProductID = ?
+    """, (invoice_id, product_id))
+
+    existing = cursor.fetchone()
+    if existing:
+        invoice_line_id, existing_qty = existing
+        new_qty = existing_qty + quantity
+        cursor.execute("""
+            UPDATE INVOICEITEM
+            SET Quantity = ?
+            WHERE InvoiceLineID = ?
+        """, (new_qty, invoice_line_id))
+    else:
+        cursor.execute("""
+            INSERT INTO INVOICEITEM (InvoiceID, ProductID, UnitPrice, Quantity)
+            VALUES (?, ?, ?, ?)
+        """, (invoice_id, product_id, unit_price, quantity))
