@@ -1,54 +1,54 @@
-def game_xmas(gizli_kelime):
-    n = 8  # n=Tahmin_Hakki
-    list_tahmin_edilen = []
+def game_xmas(secret_word):
+    n = 8  # n = Guess_Right
+    list_estimated = []
     while n <= 8 and n != 0:
-        harf = input( "Lutfen bir harf tahmin edin: " )
+        letter = input("Please give one letter to estimate: ")
 
-        if harf in gizli_kelime:
-            if harf in list_tahmin_edilen:
-                print( "Oops! Bu harfi zaten soylemistiniz:" + str( bosluk_doldurma( harf ) ) )  # bosluk_doldurma fonk.
-                print( "==============================" )
-                print( str( n ) + " tahmin hakkiniz kaldi" )
-                print( "Kalan Harfler: " + str( kalanlar ) )
-            elif harf in kalanlar:
-                print( "Iyi tahmin:" + str( bosluk_doldurma( harf ) ) )  # bosluk_doldurma fonk.
-                print( "==============================" )
-                if bos_list == ['k', 'o', 'd', 's', 't', 'a', 'r']:
-                    print( "Tebrikler!, kazandiniz" )
+        if letter in secret_word:
+            if letter in list_estimated:
+                print("Oops! You already said this letter:" + str(fill_in_the_blank(letter)))  # fill_in_the_blank fonk.
+                print("==============================" )
+                print(str(n) + " You have the right to guess")
+                print("Remaining Letters: " + str(remainings))
+            elif letter in remainings:
+                print("Good guess:" + str(fill_in_the_blank(letter)))  # fill_in_the_blank fonk.
+                print("==============================")
+                if empty_list == ['k', 'o', 'd', 's', 't', 'a', 'r']:
+                    print("Congratulations! You won!")
                     n = 0
                 else:
-                    print( str( n ) + " tahmin hakkiniz kaldi" )
-                    kalanlar.remove( harf )
-                    print( "Kalan Harfler: " + str( kalanlar ) )
+                    print(str(n) + " You have the right to guess")
+                    remainings.remove(letter)
+                    print("Remaining Letters: " + str(remainings))
 
         else:
             n = n - 1
-            print( "Oops! Yanlis tahmin:" + str( bos_list ) )  # bosluk_doldurma fonk.
-            print( "==============================" )
+            print("Oops! Wrong guess:" + str(empty_list))  # fill_in_the_blank fonk.
+            print("==============================")
             if n == 0:
-                print( "Ne yazik ki tum haklariniz tukendi, gizli kelime  kodstar  olacakti" )
+                print("Unfortunately, all your rights are gone, secret_word was going to be kodstar")
             else:
-                print( str( n ) + " tahmin hakkiniz kaldi" )
-                print( "Kalan Harfler: " + str( kalanlar ) )
+                print(str(n) + " You have the right to guess")
+                print("Remaining Letters: " + str(remainings))
 
-        list_tahmin_edilen.append( harf )
-
-
-def bosluk_doldurma(harf):
-    h = gizli_kelime1.index( harf )
-    bos_list.pop( h )
-    bos_list.insert( h, harf )
-    return bos_list
+        list_estimated.append(letter)
 
 
-print( "Xmas oyununa Hosgeldiniz" )
-print( "Bulmaniz gereken kelime 7 harf iceriyor." )
-print( "==============================" )
-print( "8 tahmin hakkiniz kaldi" )
+def fill_in_the_blank(letter):
+    h = secret_word1.index(letter)
+    empty_list.pop(h)
+    empty_list.insert(h, letter)
+    return empty_list
+
+
+print("Welcome to the Xmas game!")
+print("The word you need to find contains 7 letters.")
+print("==============================")
+print("You have 8 guesses left.")
 print(
-    "Kalan Harfler: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']" )
-kalanlar = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+    "Remainings Letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']" )
+remainings = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z']
-bos_list = ['-', '-', '-', '-', '-', '-', '-']
-gizli_kelime1 = "kodstar"
-game_xmas( gizli_kelime1 )
+empty_list = ['-', '-', '-', '-', '-', '-', '-']
+secret_word1 = "kodstar"
+game_xmas(secret_word1)
