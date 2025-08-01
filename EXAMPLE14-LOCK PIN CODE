@@ -1,15 +1,15 @@
-print("ACME Bankası Uygulamasına Hoşgeldiniz.")
-giris = int(input("PIN kodunu girin"))
+print("Welcome to ACME Bank")
+access = int(input("PIN code"))
 pin=1234
-deneme_sayisi=1
+attempt=1
 
-while deneme_sayisi < 3 :
-   if giris != pin:
-     giris = int(input("Hatalı Giriş. Tekrar PIN girin"))
-     deneme_sayisi = deneme_sayisi + 1
+while attempt < 3 :
+   if access != pin:
+     access = int(input("Wrong PIN, try again!"))
+     attempt = attempt + 1
 
-   if giris == pin:
-     print("PIN Kabul Edildi. Hesabınıza Erişebilirsiniz.")
+   if access == pin:
+     print("True PIN. You can access your account.")
      
-   elif deneme_sayisi >= 3:
-     print("3'den Fazla Giriş Hakkınız Yok. Hesabınız Kilitlendi!")
+   elif attempt >= 3:
+     print("Your account locked because of more than 3 fail attempt!")
