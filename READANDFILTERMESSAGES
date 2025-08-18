@@ -1,5 +1,7 @@
-#1. Read the file
-#2. Filter Messages
+# 1. Read the text in file
+  2. Filter messages from this text
+
+# Python
 
 filename = './messagefile/Messages.txt'
 def readfile():
@@ -19,6 +21,6 @@ def filtermessages():
         print(messages)
 
 readfile()
-print("-------------------------------")
+print("")
 filtermessages()
-print("-------------------------------")
+print("")
