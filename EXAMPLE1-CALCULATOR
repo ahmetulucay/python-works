@@ -1,21 +1,41 @@
-# Calculator program
+# Simple Calculator Program. Old version is updated.
+# To give you an idea of ​​how to perform the four basic operations using two numbers.
 
 def calculator():
-    sonuc = 0
-    sayi = 0
-    islem = input('İşlemi gir [+, -, *, /, x]? ')
+    print("Welcome to Calculator Program!")
+    print("Unless you select 'X', you are always in Program")
 
-    while islem != 'x' :
-        sayi=int(input('Sayı gir? '))
-        if islem == '+':
-            sonuc = sonuc + sayi
-        if islem == '-':
-            sonuc = sonuc - sayi
-        if islem == '*':
-            sonuc = sonuc * sayi
-        if islem == '/':
-            sonuc = sonuc / sayi
-        print(sonuc)
-        islem = input('İşlemi gir [+, -, *, /, x]? ')
+    # Start with the first number from the user
+    result = float(input("Enter the first number: "))
+
+    while True:
+        basic_op = input("Select one operation [+, -, *, /, X]: ").upper()
+
+        if basic_op == 'X':
+            print("Exiting Calculator. Final result:", result)
+            break
+
+        number = float(input("Enter the next number: "))
+
+        if basic_op == '+':
+            result = result + number
+        elif basic_op == '-':
+            result = result - number
+        elif basic_op == '*':
+            result = result * number
+        elif basic_op == '/':
+            if number == 0:
+                if result == 0:
+                    print("Error: 0 divided by 0 is undefined! Please try again.")
+                else:
+                    print("Error: Division by zero not allowed.")
+                continue
+            else:
+                result = result / number
+        else:
+            print("Invalid operation! Try again.")
+            continue
+
+        print("Current result:", result)
 
 calculator()
