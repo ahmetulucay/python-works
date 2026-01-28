@@ -5,10 +5,9 @@
 # Then it sorts the numbers into the appropriate lists.
 # Finally, it prints both the even and odd number lists.
 
-
 numbers = []
-evens = []
-odds = []
+even = []
+odd = []
 
 counter = 1
 
@@ -16,13 +15,13 @@ while counter <=10:
     number = float(input(f"Enter number {counter}: "))
     numbers.append(number)
     if number % 2 == 0:
-        evens.append(number)
+        even.append(number)
     else:
-        odds.append(number)
+        odd.append(number)
     counter += 1
 
 print("Welcome to the 'EVEN and ODD NUMBERS'")
 print("-------------------------------------")
-print("Even numbers' list: ", evens)
+print("Even numbers' list: ", even)
 print("-------------------------------------")
-print("Odd numbers' list: ", odds)
+print("Odd numbers' list: ", odd)
