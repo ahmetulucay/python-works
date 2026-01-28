@@ -20,8 +20,8 @@ while counter <=10:
         odd.append(number)
     counter += 1
 
-print("Welcome to the 'EVEN and ODD NUMBERS'")
-print("-------------------------------------")
+print("Here is 'EVEN and ODD NUMBERS'")
+print("------------------------------")
 print("Even numbers' list: ", even)
-print("-------------------------------------")
+print("------------------------------")
 print("Odd numbers' list: ", odd)
